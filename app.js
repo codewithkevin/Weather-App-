@@ -8,7 +8,7 @@ const app = express()
 
 app.use(bodypasser.urlencoded({extended: true}));
 
-app.use('/css', express.static(__dirname + "/css"))
+app.use('/css', express.static(__dirname + "/css"));
 
 app.use('/script', express.static(__dirname + "/script"))
 
