@@ -60,4 +60,7 @@ h1.temp {
     margin-bottom: 0.4em;
 }
 
-
+.flex {
+    display: flex;
+    align-items: center;
+}
