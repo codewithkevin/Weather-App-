@@ -1,5 +1,5 @@
 let weather = {
-const apiKey = process.env.API_KEY
+ apiKey:"7cb628c80665c5072fa967f5bd91723a ",
 fetchWeather: function (city) {
     fetch(
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -51,4 +51,4 @@ document
     }
 });
 
-weather.fetchWeather("Denver");
+weather.fetchWeather("Accra");
