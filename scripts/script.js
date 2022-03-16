@@ -17,10 +17,12 @@ fetchWeather: function (city) {
     .then((data) => this.displayWeather(data));
 },
 
+
 displayWeather: function (data) {
-    const { name } = data;
+    const {name}   = data;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
+    const { country } = data.sys
     const { speed } = data.wind;
     document.querySelector(".city").innerText = "Weather in " + name;
     document.querySelector(".icon").src =
@@ -34,6 +36,8 @@ displayWeather: function (data) {
     document.querySelector(".weather").classList.remove("loading");
     document.body.style.backgroundImage =
     "url('https://source.unsplash.com/1600x900/?" + name + "')";
+
+    document.querySelector(".counrty").innerHTML = country;
 },
 
 search: function () {
