@@ -25,8 +25,27 @@ displayWeather: function (data) {
     const { country } = data.sys
     const { speed } = data.wind;
     
-    var today = new Date();
-    var currentTime = today.toLocaleTimeString();
+    // var today = new Date();
+    // var currentTime = today.toLocaleTimeString();
+
+    function calcTime(city, offset) {
+        // create Date object for current location
+        var d = new Date();
+    
+        // convert to msec
+        // subtract local time zone offset
+        // get UTC time in msec
+        var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+    
+        // create new Date object for different city
+        // using supplied offset
+        var nd = new Date(utc + (36000*offset));
+    
+        // return time as a string
+        return  nd.toLocaleString();
+    }
+    
+    // alert(calcTime('Bombay', '+5.5'));
 
     document.querySelector(".city").innerText = "Weather in " + name;
     document.querySelector(".icon").src =
@@ -42,7 +61,7 @@ displayWeather: function (data) {
     "url('https://source.unsplash.com/1600x900/?" + "weather"  + "')";
 
     document.querySelector(".counrty").innerHTML = country;
-    document.querySelector(".time").innerHTML = currentTime;
+    document.querySelector(".time").innerHTML = calcTime(name, '+5.5');
 },
 
 search: function () {
