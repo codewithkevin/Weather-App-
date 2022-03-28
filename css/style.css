@@ -88,5 +88,9 @@ h1.temp {
 .description-info  {
     float: right;
     margin-top: -90px;
+}
 
+.description-info .time {
+    font-size: 80%;
+    margin-top: 1.5em;
 }
