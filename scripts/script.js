@@ -24,6 +24,7 @@ displayWeather: function (data) {
     const { temp, humidity } = data.main;
     const { country } = data.sys
     const { speed } = data.wind;
+    
     var today = new Date();
     var currentTime = today.toLocaleTimeString();
 
