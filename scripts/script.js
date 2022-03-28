@@ -24,6 +24,9 @@ displayWeather: function (data) {
     const { temp, humidity } = data.main;
     const { country } = data.sys
     const { speed } = data.wind;
+    var today = new Date();
+    var currentTime = today.toLocaleTimeString();
+
     document.querySelector(".city").innerText = "Weather in " + name;
     document.querySelector(".icon").src =
     "https://openweathermap.org/img/wn/" + icon + ".png";
@@ -38,6 +41,7 @@ displayWeather: function (data) {
     "url('https://source.unsplash.com/1600x900/?" + "weather"  + "')";
 
     document.querySelector(".counrty").innerHTML = country;
+    document.querySelector(".time").innerHTML = currentTime;
 },
 
 search: function () {
